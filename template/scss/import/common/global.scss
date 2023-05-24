@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	min-height: 100vh;
+	color: var(--black-primary);
+	font-size: 14px;
+	line-height: 20px;
+	font-family: $font-family;
+}
+
+.wrapper {
+	display: flex;
+	flex: 1 0 auto;
+}
+
+.section {
+	padding: 50px 20px;
+	
+	// <= 767px
+	@include media-table-s {
+		padding: 25px 20px;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1660px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main {
+	width: 100%;
+}

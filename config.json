@@ -1,0 +1,67 @@
+{
+    "start": "index.html",
+    "src":   "app",
+    "build": "dist",
+    "template": "template",
+    "indent_size": 4,
+
+    "source": {
+        "html": {
+            "main": "./app/*.slim",
+            "core": "./app/slim/**/*.slim" 
+        },
+
+        "css": {
+            "main": "./app/scss/*.scss",
+            "import": [
+                "./app/scss/import/**/*.*", 
+                "./app/slim/**/*.scss", 
+                "./app/slim/**/*.css"
+            ],
+            "libs": "./app/scss/libs/**/*.css"
+        },
+
+        "script": {
+            "main":    "./app/js/*.js",
+            "modules": "./app/js/modules/**/*.js",
+            "libs":    "./app/js/libs/**/*.js"
+        },
+
+        "images": [
+            "./app/img/**/*.*",
+            "!./app/img/base64/*.*",
+            "!./app/img/svg-sprite/*.*"
+        ],
+
+        "svg": {
+            "sprite":  {
+                "file": "icon-sprite-svg.slim",
+                "path": "./app/img/svg-sprite/*.svg",
+                "dest": "./app/slim/include/"
+            }	
+        },
+
+        "base64": "../img/base64/",
+
+        "others": [
+            "./app/fonts/**/*.*", 
+            "./app/video/**/*.*",
+            "./app/js/static/**/*.js",
+            "./app/js/**/*.json"
+        ] 
+    },
+
+    "notifications": {
+        "html": "HTML - всё отлично!",
+        "css":  "CSS - всё отлично!",
+        "script": {
+            "main":   "main.js — всё отлично!",
+            "others": "JS — всё отлично!"
+        },
+
+        "create_tmp": {
+            "succes":  "Шаблон проекта создан",
+            "warning": "Перед созданием шаблона проекта, сохраните текущий проект:"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "comments": false,
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": "> 0.2% and not dead",
+                "useBuiltIns": "usage",
+                "corejs": 3,
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": ["@babel/plugin-transform-runtime"],
+    "exclude": [
+        "**/node_modules/**",
+        "./app/js/modules/libs/**"
+    ]
+}

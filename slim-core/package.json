@@ -1,0 +1,52 @@
+{
+  "name": "slim-core",
+  "description": "slim plugin for gulp",
+  "version": "0.3.0",
+  "homepage": "https://github.com/cognitom/slim-core",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cognitom/slim-core.git"
+  },
+  "author": {
+    "name": "Tsutomu Kawamura",
+    "url": "http://librize.com/"
+  },
+  "contributors": [
+    "Chang Wang (https://github.com/cheapsteak)",
+    "Dominik Menke (https://github.com/dmke)",
+    "yozzh (https://github.com/yozzh)"
+  ],
+  "main": "./index.js",
+  "keywords": [
+    "gulpplugin",
+    "slim",
+    "slim-lang",
+    "template"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "npm-check-updates": "^16.10.12",
+    "spawn-cmd": "0.0.2",
+    "through2": "^4.0.2"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "gulp": "^4.0.2",
+    "gulp-coffee": "^3.0.3",
+    "mocha": "^10.2.0",
+    "should": "^13.2.3"
+  },
+  "scripts": {
+    "test": "mocha --require coffeescript/register 'test/**/*.coffee'",
+    "prepublish": "gulp coffee",
+    "package:update": "ncu -u"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

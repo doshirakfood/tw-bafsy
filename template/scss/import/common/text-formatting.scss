@@ -1,0 +1,118 @@
+h1, h2, h3, h4, h5, h6, .title {
+	font-size: 26px;
+	line-height: normal;
+	margin: 0px 0px 30px;
+	
+	// <= 1440px
+	@include media-desktop-m {
+		font-size: 24px;
+	}
+	
+	// <= 767px
+	@include media-table-s {
+		font-size: 18px;
+		margin: 0px 0px 15px;
+	}
+}
+
+p, ul, ol {
+	margin: 0px;
+	&:not([class]) {
+		margin: 20px 0px;
+	}
+}
+
+ul, ol {
+	padding-left: 0px;		
+	list-style-type: none;
+	&:not([class]) {
+		li {
+			position: relative;
+			padding-left: 15px;
+			& + li {
+				margin: 10px 0px 0px;
+			}
+		}
+	}
+}
+
+ul {
+	&:not([class]) {
+		li:before {
+			content: '';
+			
+			top: 6px;
+			left: 0px;
+			position: absolute;
+			
+			width: 8px;
+			height: 8px;
+			display: block;
+			border-radius: 100px;
+			background-color: var(--brand);
+		}
+	}
+}
+
+ol {
+	counter-reset: num; 
+	li:before {
+		content: counter(num);
+		counter-increment: num;
+		top: 0px;
+		left: 0px;
+		position: absolute;
+		display: block;
+		color: var(--brand);
+		font-weight: bold;	
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: all $transition-primary;
+	&:not([class]) {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;	
+		}
+	}
+
+	&:active {
+		@include active();
+	}
+}
+
+.table-wrapper {
+	width: 100%;
+	margin: 20px 0px;
+	overflow-x: auto;
+	@include scroll-shadow-x(#fff);
+}
+
+table {
+	width: 100%;
+	min-width: 768px;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 10px;
+	border: 1px solid var(--black-primary);
+}
+
+mark {
+	color: #fff;
+	background-color: var(--brand);
+}
+		
+hr {
+	margin: 30px 0px;
+	border: 2px solid var(--brand);
+}
+
+abbr {
+	cursor: pointer;
+	text-decoration: none;
+}

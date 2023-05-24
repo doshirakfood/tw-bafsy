@@ -1,0 +1,58 @@
+{
+  "name": "layout-html",
+  "version": "3.0.0",
+  "description": "https://youtu.be/wn83dG_I0sg",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "tmp": "gulp tmp",
+    "watch": "gulp watch",
+    "dev": "gulp start --node-env development",
+    "build": "gulp start --node-env production",
+    "package:update": "ncu -u",
+    "github-pages": "gulp deploy"
+  },
+  "workspaces": [
+    "slim-core"
+  ],
+  "author": "A.Korobkin — doshirakfood@ya.ru",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-multi-entry": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "gulp": "^4.0.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "npm-check-updates": "^16.10.12",
+    "rollup": "^3.23.0",
+    "sass": "^1.62.1",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.21.5",
+    "browser-sync": "^2.29.3",
+    "clean-css": "^5.3.2",
+    "del": "^7.0.0",
+    "fancy-log": "^2.0.0",
+    "fs-extra": "^11.1.1",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-base64-inline": "^1.0.6",
+    "gulp-beautify": "^3.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgo": "^2.2.1"
+  }
+}

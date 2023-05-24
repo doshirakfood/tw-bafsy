@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        title Тестовое задание 
+
+        meta(charset="UTF-8")
+        meta(name="viewport"    content="width=device-width,initial-scale=1,user-scalable=no")
+        meta(name='description' content='Description page')
+
+        link(rel='shortcut icon'    href='img/favicon.ico' type='image/x-icon')
+        link(rel='icon'             href='img/favicon.svg' type='image/svg+xml')
+        link(rel='apple-touch-icon' href='img/apple-touch-icon.png')
+        link(rel='canonical'        href='https://example.com/index.html')
+        link(rel="stylesheet"       href="css/all.min.css")
+
+        script(defer src="js/all.min.js")
+    body
+        main.main
+            <section class="section winners js-toggle-visible" style="--bg-image-table-m: url('../img/pic-01.jpg'); --bg-image-phone-m: url('../img/pic-02.jpg');">
+                .winners__container.container
+                    button.winners__title.title.toggle-visible-trigger aria-expanded="true" type="button" Победители
+
+                    .winners__content.toggle-visible-content
+                        .winners-header
+                            .winners-header__row
+                                / left
+                                .winners-header__col.left
+                                    input.winners__search.field.search type="search" placeholder="Поиск по email"/
+                                / center
+                                .winners-header__col.center
+                                    #winners-tab-nav.winners-tab__nav.tab-nav aria-label="Недели"
+                                        - for i in (1..4)
+                                            button.winners-tab__trigger.tab-trigger type="button" #{i} неделя
+                                / right
+                                .winners-header__col.right
+
+                        .winners-body.js-tab data-tab-nav="#winners-tab-nav"
+                            .tab-main
+                                - for i in (1..4)
+                                    .winners-tab__content.tab-content
+                                        .tab-hidden
+                                            .winners-table
+                                                .winners-table__row.row.mx-0.tr-name.tr-ignore
+                                                    .winners-table__col.col Имя
+                                                    .winners-table__col.col Email
+                                                    .winners-table__col.col Приз

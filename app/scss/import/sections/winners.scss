@@ -1,0 +1,221 @@
+.winners {
+    min-height: 100vh;
+    position: relative;
+    &:before {
+        content: '';
+        
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        
+        z-index: -1;
+        opacity: .4;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    &-header {
+        margin: 0px 0px 30px;
+        &__row {
+            margin: -10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__col {
+            margin: 10px;
+            display: flex;
+            flex-basis: calc((100% / 3) - 20px);
+        }
+    }
+
+    &-tab {
+        &__nav {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        &__trigger {
+            flex-grow: 1;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-width: 1px;
+            border-style: solid;
+            border-color: var(--gray-secondary);
+            & + .winners-tab__trigger {
+                margin-left: -1px;
+            }
+
+            &:first-of-type {
+                border-radius: 100px 0px 0px 100px;
+            }
+            
+            &:last-of-type {
+                border-radius: 0px 100px 100px 0px;
+            }
+            
+            &.tab-trigger--selected {
+                color: #fff;
+                background-color: var(--gray-secondary);
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    @include hover();
+                }
+            }
+        }
+
+        &__content {
+            transform: translateX(-80px);
+            transition: transform $transition-animation;            
+            &.tab-content--selected {
+                transform: translateX(0px);
+            }      
+        }
+    }
+
+    &-body {
+        min-height: 500px;
+    }
+
+    &-table {
+        font-size: 20px;
+        &__row {
+            &.tr-name {
+                border-bottom: 1px solid var(--gray-secondary);
+            }
+        }
+
+        &__col {
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            :not(.tr-name) & {
+                &:before {
+                    content: '';
+                    flex-basis: 20%;
+                    display: none;
+                    margin-right: 10px;
+                }
+            }
+
+            &.tc {
+                &-name {
+                    &:before {
+                        content: 'Имя';
+                    };
+                }
+
+                &-email {
+                    &:before {
+                        content: 'Email';
+                    };
+                }
+            }
+        }
+    }
+
+
+    // <= 1280px
+    @include media-desktop-s {
+        &-header {
+            &__col {
+                flex-basis: auto;
+                &.right {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // <= 980px
+	@include media-table-m {
+        &:before {
+            background-color: #0093E9;            
+            background-image: var(--bg-image-table-m);
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &-header {
+            &__row {
+                align-items: center;
+                flex-direction: column;
+            }
+
+            &__col {
+                flex-grow: 1;
+                flex-basis: 100%;
+            }
+        }
+
+        &-body {
+            min-height: 400px;
+        }
+
+        &-table {
+            font-size: 18px;
+        }
+	}
+
+    // <= 767px
+	@include media-phone-m {
+        &:before {
+            background-color: #85FFBD;
+            background-image: var(--bg-image-phone-m);
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &-header {
+            &__row {
+                align-items: inherit;
+            }
+        }
+
+        &-tab {
+            &__trigger {
+                font-size: 12px;
+                padding: 10px 6px;
+            }
+        }
+
+        &__search {
+            width: 100%;
+        }
+
+        &-table {
+            font-size: 16px;
+            &__row {
+                &.tr-name {
+                    display: none;
+                }
+
+                &:not(.tr-name) + .winners-table__row {
+                    border-top: 1px solid var(--gray-secondary); 
+                }
+            }
+
+            &__col {
+                flex-basis: 100%;
+                padding: 20px 0px;
+                :not(.tr-name) & {
+                    &:before {
+                        display: block;
+                    }
+                }
+
+                span {
+                    flex-basis: calc(100% - (20% + 10px));
+                }
+            }
+        }
+	}
+}

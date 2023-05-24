@@ -1,0 +1,13 @@
+:root {
+    --brand: #{$brand};
+
+    --black-primary: #{$light-black-primary};
+    --blue-default-active: #{$light-blue-default-active};
+
+    --gray-primary: #{$light-gray-primary};
+    --gray-secondary: #{$light-gray-secondary};
+    --gray-tertiary: #{$light-gray-tertiary};
+
+    --success-primaty: #{$light-green-primary};
+    --reg-primary: #{$light-red-primary};
+}

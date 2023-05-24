@@ -1,0 +1,21 @@
+// stylus
+@import './import/variables.scss';
+@import './import/mixins/global.scss';
+@import './import/mixins/media.scss';
+
+// libs
+@import './import/libs/bootstrap.min.scss';
+@import './import/libs/basic-ui.min.scss';
+
+// root
+@import './import/root.scss';
+
+// common
+@import './import/common/fonts.scss';
+@import './import/common/global.scss';
+@import './import/common/text-formatting.scss';
+@import './import/common/buttons.scss';
+@import './import/common/fields.scss';
+
+// sections
+@import './import/sections/winners.scss';

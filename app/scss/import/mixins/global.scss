@@ -1,0 +1,26 @@
+@mixin scroll-shadow-x($bcgColor) {
+	background-image: linear-gradient(to right, $bcgColor, $bcgColor), linear-gradient(to right, $bcgColor, $bcgColor), linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
+	background-position: left center, right center, left center, right center;
+	background-repeat: no-repeat;
+	background-color: $bcgColor;
+	background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+@mixin scroll-shadow-y($bcgColor) {
+	background: linear-gradient($bcgColor 33%, rgba(255,255,255, 0)), linear-gradient(rgba(255,255,255, 0), $bcgColor 66%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba(34,34,34, 0.5), rgba(0,0,0,0)), radial-gradient(farthest-side at 50% 100%, rgba(34,34,34, 0.5), rgba(0,0,0,0)) 0 100%;
+	background-color: $bcgColor;
+	background-repeat: no-repeat;
+	background-attachment: local, local, scroll, scroll;
+	background-size: 100% 45px, 100% 45px, 100% 15px, 100% 15px;
+}
+
+
+@mixin hover() {
+	opacity: .9;
+	background-color: var(--hover-primary);
+}
+
+@mixin active() {
+	transform: translateY(2px);
+}
